@@ -1,8 +1,9 @@
 name: Jekyll site CI
 
 on:
+  # is this neccessary for PR-commit-push?
   push:
-    branches: [ * ] # is this neccessary for PR-commit-push?
+    branches: [ * ] 
   pull_request:
     branches: [ master ]
 
