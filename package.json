@@ -1,0 +1,23 @@
+{
+  "name": "ci-cd-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "surge": "surge"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ikendoit/ci-cd-template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ikendoit/ci-cd-template/issues"
+  },
+  "homepage": "https://github.com/ikendoit/ci-cd-template#readme",
+  "dependencies": {
+    "surge": "^0.23.0"
+  }
+}
