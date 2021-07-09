@@ -11,17 +11,11 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Run test suite
-        run: echo "beep beep, test suite is running, ${ls}"
 
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
 
-      - name: List files in the repository
-        run: |
-            ls ${{ github.workspace }}
-
       - name: verify HTML file exists
         run: |
-            ls ${{ github.workspace }}
-
+            ls ${{ github.workspace }} | grep "index.html"
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
