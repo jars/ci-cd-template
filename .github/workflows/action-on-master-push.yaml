@@ -11,8 +11,7 @@ jobs:
 
     env:
       SURGE_LOGIN: knguyen@semios.com
-      SURGE_TOKEN: sdfaksjhfkjdsahfkjhj 
-      #${{secrets.SURGE_TOKEN}}
+      SURGE_TOKEN: ${{secrets.SURGE_TOKEN}} 
 
     steps:
     - uses: actions/checkout@v2
@@ -28,12 +27,6 @@ jobs:
 
     - name: Install Surge
       run: npm install -g surge
-
-    - name: probe
-      run: echo "email = $SURGE_LOGIN"
-
-    - name: probe-2
-      run: ls ${{ github.workspace }}/../
 
     # update html file
     - name: add github commit
