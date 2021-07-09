@@ -34,11 +34,12 @@ jobs:
     - name: add github commit
       run: sed -i "s/COMMIT_HASH/${{ github.sha }}/g" ${{ github.workspace }}/index.html
 
+    # using hashtag because repo name can have slashes
     - name: add github repo
-      run: sed -i "s/GITHUB_REPO/${{ github.repository }}/g" ${{ github.workspace }}/index.html
+      run: sed -i "s#GITHUB_REPO#${{ github.repository }}#g" ${{ github.workspace }}/index.html
 
     - name: add github actor
-      run: sed -i "s/GITHUB_ACTOR/${{ github.actor }}/g" ${{ github.workspace }}/index.html
+      run: sed -i "s#GITHUB_ACTOR#${{ github.actor }}#g" ${{ github.workspace }}/index.html
 
     - name: Deploy to Surge
       run:  npm run surge ${{ github.workspace }} https://discreet-plant.surge.sh --token "${{secrets.SURGE_TOKEN}}"
