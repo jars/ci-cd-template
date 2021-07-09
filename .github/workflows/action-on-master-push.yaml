@@ -1,0 +1,16 @@
+name: Action on master push
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run the surge.sh deployment script
+      run: |
+        echo "Beep beep, surge.sh doing deeeployment"
