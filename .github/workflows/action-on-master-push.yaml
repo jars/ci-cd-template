@@ -28,6 +28,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+    - name: probe
+      run: ls ${{ github.workspace }}
+
+    - name: probe-2
+      run: ls ${{ github.workspace }}/../
+
     - name: add github commit
       run: sed -i "s/COMMIT_HASH/${{ github.sha }}/g" ${{ github.workspace }}/index.html
 
