@@ -11,6 +11,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+
     - name: Run the surge.sh deployment script
       run: |
         echo "Beep beep, surge.sh doing deeeployment"
@@ -23,18 +24,13 @@ jobs:
     - name: Install Surge
       run: npm install -g surge
 
-  replace_variable:
-
-    runs-on: ubuntu-latest
-
-    steps:
-
     - name: probe
       run: ls ${{ github.workspace }}
 
     - name: probe-2
       run: ls ${{ github.workspace }}/../
 
+    # update html file
     - name: add github commit
       run: sed -i "s/COMMIT_HASH/${{ github.sha }}/g" ${{ github.workspace }}/index.html
 
@@ -43,12 +39,6 @@ jobs:
 
     - name: add github actor
       run: sed -i "s/GITHUB_ACTOR/${{ github.actor }}/g" ${{ github.workspace }}/index.html
-
-  deploy:
-
-    runs-on: ubuntu-latest
-
-    steps:
 
     - name: Deploy to Surge
       run:  npm run surge ${{ github.workspace }} https://discreet-plant.surge.sh --token "${{secrets.SURGE_TOKEN}}"
