@@ -11,6 +11,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Run test suite
+        run: "echo running test suite"
 
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
 
