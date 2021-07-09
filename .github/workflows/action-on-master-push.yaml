@@ -11,7 +11,8 @@ jobs:
 
     env:
       SURGE_LOGIN: knguyen@semios.com
-      SURGE_TOKEN: ${{secrets.SURGE_TOKEN}}
+      SURGE_TOKEN: sdfaksjhfkjdsahfkjhj 
+      #${{secrets.SURGE_TOKEN}}
 
     steps:
     - uses: actions/checkout@v2
