@@ -46,4 +46,4 @@ jobs:
       run: sed -i "s#GITHUB_ACTOR#${{ github.actor }}#g" ${{ github.workspace }}/index.html
 
     - name: Deploy to Surge
-      run:  npm run surge ${{ github.workspace }} https://discreet-plant.surge.sh
+      run:  surge ${{ github.workspace }} https://discreet-plant.surge.sh
