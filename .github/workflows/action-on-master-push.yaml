@@ -14,3 +14,15 @@ jobs:
     - name: Run the surge.sh deployment script
       run: |
         echo "Beep beep, surge.sh doing deeeployment"
+
+
+    - name: Setup Node
+      uses: actions/setup-node@v2-beta
+      with:
+          node-version: 12
+
+    - name: Install Surge
+      run: npm install -g surge
+
+    - name: Deploy to Surge
+      run:  npm run surge ${{ github.workspace }} https://discreet-plant.surge.sh --token ${{secrets.SURGE_TOKEN}}
