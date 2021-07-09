@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      SURGE_EMAIL: knguyen@semios.com
+      SURGE_LOGIN: knguyen@semios.com
       SURGE_TOKEN: ${{secrets.SURGE_TOKEN}}
 
     steps:
