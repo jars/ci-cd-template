@@ -21,7 +21,7 @@ jobs:
 
       - name: verify HTML file exists
         run: |
-            ls ${{ github.workspace }}
+            ls ${{ github.workspace }} | grep index.html
 
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
